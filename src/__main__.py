@@ -53,7 +53,7 @@ def generate_output():
         problem_class = problem_map[problem_id]
         for id, filename in enumerate(input_files):
             f = open("{0}/{1}".format(test_input_path, filename), 'r')
-            generate_file_output(f, problem_class, id)
+            generate_file_output(f, problem_class, id+1)
 
     except Exception as e:
         print(e)
