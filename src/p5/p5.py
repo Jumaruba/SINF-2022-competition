@@ -1,5 +1,21 @@
-class Solution:
-    def canPartitionKSubsets(self, nums: List[int], k: int) -> bool:
+from src.Solution import Solution
+from ..utils import string_to_int_arr
+from ..Solution import Solution 
+
+class P5(Solution):
+    # Given the arguments as an array of string transform it to the correct format. 
+    @staticmethod
+    def get_arguments(args):
+        arg0 = string_to_int_arr(args[0])
+        arg1 = int(args[1])
+        return [arg0, arg1]
+
+    @staticmethod 
+    def format_result(result): 
+        return "{0}\n".format(result)
+
+    @staticmethod
+    def solve(nums: list[int], k: int):
         num_sum = sum(nums)
         if num_sum % k != 0:
             return False 
