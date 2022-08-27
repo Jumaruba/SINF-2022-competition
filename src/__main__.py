@@ -1,10 +1,11 @@
 import os
 import sys 
+from .p1 import P1
 from .p5 import P5
 from .Solution import Solution
 
 problem_map = {
-    "p1": None,
+    "p1": P1,
     "p2": None,
     "p3": None,
     "p4": None,
@@ -12,7 +13,7 @@ problem_map = {
     "p6": None
 }
 
-problem_id = "p5"
+problem_id = "p1"
 test_input_path = "./src/{0}/test/input".format(problem_id)
 test_output_path = "./src/{0}/test/output".format(problem_id)
 
@@ -51,7 +52,9 @@ def generate_output():
     try:
         input_files = [f for f in os.listdir(test_input_path)]
         problem_class = problem_map[problem_id]
+        input_files.sort()
         for id, filename in enumerate(input_files):
+            print(filename)
             f = open("{0}/{1}".format(test_input_path, filename), 'r')
             generate_file_output(f, problem_class, id+1)
 
