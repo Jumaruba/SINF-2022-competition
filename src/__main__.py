@@ -56,6 +56,7 @@ def generate_file_output(f, problem_class: Solution, id: int):
 def generate_output():
     try:
         input_files = [f for f in os.listdir(test_input_path)]
+        input_files.sort()
         problem_class = problem_map[problem_id]
         for id, filename in enumerate(input_files):
             f = open("{0}/{1}".format(test_input_path, filename), 'r')
