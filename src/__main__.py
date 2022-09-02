@@ -2,18 +2,19 @@ import os
 import sys 
 from .p1 import P1
 from .p5 import P5
+from .p4 import P4
 from .Solution import Solution
 
 problem_map = {
     "p1": P1,
     "p2": None,
     "p3": None,
-    "p4": None,
+    "p4": P4,
     "p5": P5, 
     "p6": None
 }
 
-problem_id = "p1"
+problem_id = "p4"
 test_input_path = "./src/{0}/test/input".format(problem_id)
 test_output_path = "./src/{0}/test/output".format(problem_id)
 
