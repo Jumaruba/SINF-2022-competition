@@ -2,18 +2,21 @@ import os
 import sys 
 from .p1 import P1
 from .p2 import P2
+from .p4 import P4
 from .p5 import P5
 from .p6 import P6
+
 from .Solution import Solution
 
 problem_map = {
     "p1": P1,
     "p2": P2,
     "p3": None,
-    "p4": None,
+    "p4": P4,
     "p5": P5, 
     "p6": P6 
 }
+
 
 problem_id = ""
 test_input_path = ""
