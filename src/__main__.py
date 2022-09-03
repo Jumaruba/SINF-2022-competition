@@ -1,19 +1,19 @@
 import os
 import sys 
 from .p1 import P1
+from .p2 import P2
 from .p5 import P5
 from .p6 import P6
 from .Solution import Solution
 
 problem_map = {
     "p1": P1,
-    "p2": None,
+    "p2": P2,
     "p3": None,
     "p4": None,
     "p5": P5, 
     "p6": P6 
 }
-
 
 problem_id = ""
 test_input_path = ""
@@ -77,3 +77,4 @@ def generate_output():
 if __name__ == '__main__':
     check_args()
     generate_output()
+    
