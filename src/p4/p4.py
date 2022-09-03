@@ -49,7 +49,7 @@ class P4(Solution):
                     new_path = node.path + [edge]
                     new_node = Node(edge, node.cost + 1, new_path)
                     queue.put((heuristic, new_node))
-        return node.path
+        return len(node.path)
 
 
         
