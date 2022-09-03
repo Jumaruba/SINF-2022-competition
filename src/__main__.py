@@ -3,6 +3,7 @@ import sys
 from .p1 import P1
 from .p2 import P2
 from .p5 import P5
+from .p6 import P6
 from .Solution import Solution
 
 problem_map = {
@@ -11,16 +12,19 @@ problem_map = {
     "p3": None,
     "p4": None,
     "p5": P5, 
-    "p6": None
+    "p6": P6 
 }
 
-problem_id = "p2"
+problem_id = ""
+test_input_path = ""
+test_output_path = ""
 
-test_input_path = "./src/{0}/test/input".format(problem_id)
-test_output_path = "./src/{0}/test/output".format(problem_id)
 
 def check_args():
     global problem_id
+    global test_input_path
+    global test_output_path 
+
     if len(sys.argv) > 2:
         print(  "WRONG ARGUMENTS:\n"
                 "USAGE: python -m src <problem>\n"
@@ -34,6 +38,8 @@ def check_args():
         exit() 
 
     problem_id = sys.argv[1]
+    test_input_path = "./src/{0}/test/input".format(problem_id)
+    test_output_path = "./src/{0}/test/output".format(problem_id)
 
 
 # Saves the result in a file
