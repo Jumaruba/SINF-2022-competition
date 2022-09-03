@@ -1,25 +1,33 @@
 import os
 import sys 
 from .p1 import P1
-from .p5 import P5
+from .p2 import P2
 from .p4 import P4
+from .p5 import P5
+from .p6 import P6
+
 from .Solution import Solution
 
 problem_map = {
     "p1": P1,
-    "p2": None,
+    "p2": P2,
     "p3": None,
     "p4": P4,
     "p5": P5, 
-    "p6": None
+    "p6": P6 
 }
 
-problem_id = "p4"
-test_input_path = "./src/{0}/test/input".format(problem_id)
-test_output_path = "./src/{0}/test/output".format(problem_id)
+
+problem_id = ""
+test_input_path = ""
+test_output_path = ""
+
 
 def check_args():
     global problem_id
+    global test_input_path
+    global test_output_path 
+
     if len(sys.argv) > 2:
         print(  "WRONG ARGUMENTS:\n"
                 "USAGE: python -m src <problem>\n"
@@ -33,6 +41,8 @@ def check_args():
         exit() 
 
     problem_id = sys.argv[1]
+    test_input_path = "./src/{0}/test/input".format(problem_id)
+    test_output_path = "./src/{0}/test/output".format(problem_id)
 
 
 # Saves the result in a file
@@ -52,6 +62,7 @@ def generate_file_output(f, problem_class: Solution, id: int):
 def generate_output():
     try:
         input_files = [f for f in os.listdir(test_input_path)]
+        input_files.sort()
         problem_class = problem_map[problem_id]
         input_files.sort()
         for id, filename in enumerate(input_files):
@@ -69,3 +80,4 @@ def generate_output():
 if __name__ == '__main__':
     check_args()
     generate_output()
+    
