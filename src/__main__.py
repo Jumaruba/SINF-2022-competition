@@ -48,7 +48,7 @@ def check_args():
 
 # Saves the result in a file
 def save_result(num: str, result: str):
-    f = open("{0}/o{1}".format(test_output_path, num), "w")
+    f = open("{0}/output{1}.txt".format(test_output_path, num), "w")
     f.write(result)
 
 
@@ -67,7 +67,7 @@ def generate_output():
         problem_class = problem_map[problem_id]
         input_files.sort()
         for filename in input_files:
-            id = filename.replace("i", "")
+            id = filename.replace("input", "").replace(".txt", "")
             f = open("{0}/{1}".format(test_input_path, filename), 'r')
             generate_file_output(f, problem_class, id)
 
