@@ -5,8 +5,9 @@ class P6(Solution):
     @staticmethod
     def get_arguments(args):
         res = []
-        for i in args:
-            res.append(list(map(int, i.split(" ")))) 
+        args_size = len(args)
+        for i in range(1, args_size):
+            res.append(list(map(int, args[i].split(" ")))) 
         return [res]
 
     @staticmethod 
