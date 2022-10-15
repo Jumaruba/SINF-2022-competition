@@ -6,7 +6,7 @@ class P5(Solution):
     # Given the arguments as an array of string transform it to the correct format. 
     @staticmethod
     def get_arguments(args):
-        arg0 = string_to_int_arr(args[0])
+        arg0 = list(map(int, args[0].split(" ")))
         arg1 = int(args[1])
         return [arg0, arg1]
 

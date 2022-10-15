@@ -18,8 +18,8 @@ class P4(Solution):
 
     @staticmethod
     def get_arguments(args):
-        start_position = eval(args[0])
-        end_position = eval(args[1])
+        start_position = tuple(map(int, args[0].split(" ")))
+        end_position = tuple(map(int, args[1].split(" ")))
         return [start_position, end_position]
 
     @staticmethod

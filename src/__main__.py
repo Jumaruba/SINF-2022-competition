@@ -47,12 +47,12 @@ def check_args():
 
 
 # Saves the result in a file
-def save_result(num: int, result: str):
+def save_result(num: str, result: str):
     f = open("{0}/o{1}".format(test_output_path, num), "w")
     f.write(result)
 
 
-def generate_file_output(f, problem_class: Solution, id: int):
+def generate_file_output(f, problem_class: Solution, id: str):
     lines = f.readlines()
     args = problem_class.get_arguments(lines)
     result = problem_class.solve(*args)
@@ -66,10 +66,10 @@ def generate_output():
         input_files.sort()
         problem_class = problem_map[problem_id]
         input_files.sort()
-        for id, filename in enumerate(input_files):
-            print(filename)
+        for filename in input_files:
+            id = filename.replace("i", "")
             f = open("{0}/{1}".format(test_input_path, filename), 'r')
-            generate_file_output(f, problem_class, id+1)
+            generate_file_output(f, problem_class, id)
 
     except Exception as e:
         print(e)
