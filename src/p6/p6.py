@@ -4,12 +4,20 @@ from ..utils import string_to_int_arr
 class P6(Solution): 
     @staticmethod
     def get_arguments(args):
-        arg0 = string_to_int_arr(args[0])
-        return [arg0]
+        res = []
+        args_size = len(args)
+        for i in range(1, args_size):
+            res.append(list(map(int, args[i].split(" ")))) 
+        return [res]
 
     @staticmethod 
     def format_result(result):
-        return str([ [x[0],x[1]] for x in list(result)]) + "\n"
+        s = ""
+        for res in result:
+            s += "{} {}\n".format(res[0], res[1])
+        print(s)
+        return s
+        
 
     # IMPORTANT: the result must be sorted
     @staticmethod 
