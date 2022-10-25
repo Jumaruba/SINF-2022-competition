@@ -1,1 +1,1 @@
-2[abc]3[cd]ef
+1[cafe]2[1[sugar]1[butter]2[flour]]
