@@ -1,3 +1,4 @@
+# SINF-2022-competition
 This is the repository of [SINF-2022 programming competition](www.hackerrank.com/sinf22-programming-contest).   
 Here you can find the test cases and solutions for each challenge. 
 
